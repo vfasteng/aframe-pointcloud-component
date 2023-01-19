@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>My Point Cloud Scene</title>
-  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-  <script src="dist/aframe-pointcloud-component.min.js"></script>
-</head>
+    <meta charset="utf-8">
+    <title>A-Frame Point Cloud Component - Basic</title>
+    <meta name="description" content="Basic example for Point Cloud component."></meta>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="dist/aframe-pointcloud-component.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+      </a-assets>
 
-<body>
-  <a-scene>
+      <a-plane src="#groundTexture" rotation="-90 0 0" height="100" width="100"></a-plane>
+      <a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="2" position="2 4 4"></a-light>
+      <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+      
+      <a-pointcloud 
+        scale="0.1 0.1 0.1" 
+        position="0 0.08 -2.5" 
+        rotation="-90 45 0" 
+        src="url(examples/basic/sculpt.ply)" 
+        size="0.01">
+      </a-pointcloud>
       <a-pointcloud 
         scale="0.5 0.5 0.5" 
         position="1.5 2 0.5" 
-        src="url(model.ply)" 
+        src="url(examples/basic/Sphere.ply)" 
         size="0.05"
-        texture="url(sq05.png)"
+        texture="url(examples/basic/firefox.png)"
         depthWrite="false">
       </a-pointcloud>
-  </a-scene>
-</body>
-  </html>
+
+    </a-scene>
+  </body>
+</html>
