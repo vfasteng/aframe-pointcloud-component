@@ -1,0 +1,20 @@
+<html>
+  <head>
+  <title>My Point Cloud Scene</title>
+  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+  <script src="dist/aframe-pointcloud-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+      <a-pointcloud 
+        scale="0.5 0.5 0.5" 
+        position="1.5 2 0.5" 
+        src="url(model.ply)" 
+        size="0.05"
+        texture="url(sq05.png)"
+        depthWrite="false">
+      </a-pointcloud>
+  </a-scene>
+</body>
+  </html>
